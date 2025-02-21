@@ -4,45 +4,47 @@
     <hr />
         用戶資料
     <hr />
-    <!-- 選單1 (Hover) -->
-    <span
-        class="main-menu"
-        @mouseover="switchMenu('SubMenu1', $event)"
-        @mouseout="hideMenu($event)"
-    >
-        時間表應用
-        <span style="font-size: 9px;">&#9660;</span>
-        <ul id="SubMenu1" class="sub-menu" style="display: none;">
-        <li><a href="" target="_blank">老師上課與空堂時間表</a></li>
-        <li><a href="" target="_blank">觀課選堂</a></li>
-        <li><a href="" target="_blank">調課搜尋</a></li>
-        <li><a href="" target="_blank">空堂老師 / 課堂總表</a></li>
-        <li><a href="" target="_blank">各班上課時間表</a></li>
-        <li><a href="" target="_blank">各房間上課時間表</a></li>
-        <li><a href="" target="_blank">高中選修名單</a></li>
-        <li><a href="" target="_blank">學生上課時間表</a></li>
-        </ul>
-    </span>
+    <div class="menu">
+      <!-- 選單1 (Hover) -->
+      <span
+          class="main-menu"
+          @mouseover="switchMenu('SubMenu1', $event)"
+          @mouseout="hideMenu($event)"
+      >
+          時間表應用
+          <span style="font-size: 9px;">&#9660;</span>
+          <ul id="SubMenu1" class="sub-menu" style="display: none;">
+          <li><a href="" target="_blank">老師上課與空堂時間表</a></li>
+          <li><a href="" target="_blank">觀課選堂</a></li>
+          <li><a href="" target="_blank">調課搜尋</a></li>
+          <li><a href="" target="_blank">空堂老師 / 課堂總表</a></li>
+          <li><a href="" target="_blank">各班上課時間表</a></li>
+          <li><a href="" target="_blank">各房間上課時間表</a></li>
+          <li><a href="" target="_blank">高中選修名單</a></li>
+          <li><a href="" target="_blank">學生上課時間表</a></li>
+          </ul>
+      </span>
 
-    <!-- 選單2 (Hover) -->
-    <span
-        class="main-menu"
-        @mouseover="switchMenu('SubMenu2', $event)"
-        @mouseout="hideMenu($event)"
-    >
-        提名學生
-        <span style="font-size: 9px;">&#9660;</span>
-        <ul id="SubMenu2" class="sub-menu" style="display: none;">
-            <li><a href="" target="_blank">最佳學習態度提名</a></li>
-            <li><a href="" target="_blank">最佳學習態度結果</a></li>
-            <li><a href="" target="_blank">提名</a></li>
-            <li><a href="" target="_blank">結果</a></li>
-            <li><a href="" target="_blank">提名</a></li>
-            <li><a href="" target="_blank">結果</a></li>
-            <li><a href="" target="_blank">提名</a></li>
-            <li><a href="" target="_blank">結果</a></li>
-        </ul>
-    </span>
+      <!-- 選單2 (Hover) -->
+      <span
+          class="main-menu"
+          @mouseover="switchMenu('SubMenu2', $event)"
+          @mouseout="hideMenu($event)"
+      >
+          提名學生
+          <span style="font-size: 9px;">&#9660;</span>
+          <ul id="SubMenu2" class="sub-menu" style="display: none;">
+              <li><a href="" target="_blank">最佳學習態度提名</a></li>
+              <li><a href="" target="_blank">最佳學習態度結果</a></li>
+              <li><a href="" target="_blank">提名</a></li>
+              <li><a href="" target="_blank">結果</a></li>
+              <li><a href="" target="_blank">提名</a></li>
+              <li><a href="" target="_blank">結果</a></li>
+              <li><a href="" target="_blank">提名</a></li>
+              <li><a href="" target="_blank">結果</a></li>
+          </ul>
+      </span>
+    </div>
   </header>
 </template>
 <script>
@@ -92,6 +94,11 @@ export default {
   /* 主標題樣式 */
   h1 {
     color: #000;
+  }
+  .menu{
+    display: flex;
+    justify-content: center;
+    background-color: #666;
   }
   /* 主選單樣式 */
   .main-menu {
