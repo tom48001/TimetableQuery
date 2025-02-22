@@ -1,7 +1,5 @@
 <template>
   <div>
-    <HeaderBar>
-    </HeaderBar>
     Home Page
   </div>
 </template>
@@ -15,5 +13,4 @@ export default {
   }
 }
 </script>
-<style>
-</style>
+<style></style>
