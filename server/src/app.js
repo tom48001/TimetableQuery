@@ -1,24 +1,15 @@
 import express from 'express';
-import session from 'express-session';
-import cors from 'cors';  // ✅ Import cors
-import passport from './auth.js';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import authRoutes from './routes/authRoutes.js';  //  確保有引入
+import teacherRoutes from "./routes/teacherRoutes.js";
 
 const app = express();
 
-// ✅ Enable CORS
-app.use(cors({
-  origin: 'http://localhost:8082', // Allow requests from Vue.js frontend
-  credentials: true, // Allow cookies & authentication headers
-}));
+app.use(cors({ origin: 'http://localhost:8080', credentials: true })); //  CORS 設定
+app.use(bodyParser.json()); //  確保可以讀取 JSON
 
-app.use(express.json());  // ✅ Enable JSON parsing
-app.use(session({ secret: 'secret_key', resave: false, saveUninitialized: false }));
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.post('/api/login', (req, res) => {
-  res.json({ message: 'Login successful' });
-});
+// 確保 API 路徑正確
+app.use('/api', authRoutes);
 
 app.listen(3000, () => console.log('Server running on port 3000'));
-

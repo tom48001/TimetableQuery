@@ -1,7 +1,9 @@
 <template>
   <div>
     <HeaderBar v-show="$route.meta.show"></HeaderBar>
-    <router-view></router-view>
+    <router-view>
+      <div id="app"></div>
+    </router-view>
   </div>
 </template>
 

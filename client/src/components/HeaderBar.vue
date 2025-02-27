@@ -31,19 +31,37 @@
           <li><router-link to="/Student">學生列表</router-link></li>
           <li><router-link to="/ConductAward">操行獎提名</router-link></li>
           <li><router-link to="/ConductAwardResult">操行獎提名統計結果</router-link></li>
+        </ul>
+      </span>
 
+      <!-- 只有管理員 (manager) 才能看到這個 -->
+      <span v-if="userRole ==='manager'" class="main-menu" @mouseover="switchMenu('SubMenu3', $event)" @mouseout="hideMenu($event)">
+        管理老師帳戶
+        <span style="font-size: 9px;">&#9660;</span>
+        <ul id="SubMenu3" class="sub-menu" style="display: none;">
+          <li><router-link to="/editTeacher">老師帳戶</router-link></li>
         </ul>
       </span>
     </div>
   </header>
 </template>
+
 <script>
 export default {
-  name: 'HeaderBar',
   data() {
     return {
-      visibleMenu: ''
+      userRole: null, // 用戶身份
+      visibleMenu: '' // 記錄當前打開的選單
     };
+  },
+  created() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log('HeaderBar 讀取的 user:', user);
+    if (user && user.role) {
+      this.userRole = user.role.trim().toLowerCase();
+      console.log('讀取的用戶角色:', this.userRole); // 檢查角色是否正確
+      this.$forceUpdate();
+    }
   },
   methods: {
     switchMenu(subMenuId, event) {

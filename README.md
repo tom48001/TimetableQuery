@@ -40,3 +40,23 @@ mysql -u root -p school_management < env.sql
 ```
 
 ---
+**password**
+```
+node
+import bcrypt from 'bcrypt';
+const saltRounds = 10;
+const password = "1234567"; // Your actual password
+bcrypt.hash(password, saltRounds, (err, hash) => {
+  console.log("Hashed password:", hash);
+});
+UPDATE user 
+SET password_hash = ''
+WHERE email = '2@gmail.com';
+```
+
+---
+**clear port**
+```
+netstat -ano | findstr :3000
+taskkill /PID "" /F
+```

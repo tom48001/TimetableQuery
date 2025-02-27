@@ -14,6 +14,8 @@ import BLA from '@/pages/SubMenu2/BLA.vue'
 import BLAResult from '@/pages/SubMenu2/BLAResult.vue'
 import ConductAward from '@/pages/SubMenu2/ConductAward.vue'
 import ConductAwardResult from '@/pages/SubMenu2/ConductAwardResult.vue'
+import editTeacher from '@/pages/SubMenu3/editTeacher.vue';
+
 Vue.use(Router)
 export default new Router({
   mode: 'history', // Use clean URLs (without #)
@@ -104,6 +106,12 @@ export default new Router({
       path: '/ConductAward',
       name: 'ConductAward',
       component: ConductAward,
+      meta: { show: true }
+    },
+    {
+      path: '/editTeacher',
+      name: 'editTeacher',
+      component: editTeacher,
       meta: { show: true }
     },
     {
