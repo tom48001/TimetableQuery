@@ -1,5 +1,8 @@
 <template>
   <div>
+    <HeaderBar>
+    </HeaderBar>
+
     Home Page
   </div>
 </template>
